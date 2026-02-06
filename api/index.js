@@ -42,8 +42,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/webhooks', clerkWebHooks)
-app.use('/api/company', companyRouter)
-app.use('/api/jobs', jobRouter)
-app.use('/api/users', userRouter)
+app.use('/company', companyRouter)
+app.use('/jobs', jobRouter)
+app.use('/users', userRouter)
 
 export default app
