@@ -16,7 +16,12 @@ await connectDB()
 await connectCloudinary()
 
 // Middlewares
-app.use(cors())
+app.use(
+  cors({
+    origin: "https://job-portal30.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json())
 app.use(clerkMiddleware())
 
