@@ -16,7 +16,24 @@ await connectDB()
 await connectCloudinary()
 
 // Middlewares
-app.use();
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://job-portal30.vercel.app",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json())
 app.use(clerkMiddleware())
 
