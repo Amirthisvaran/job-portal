@@ -13,9 +13,11 @@ import { clerkMiddleware } from '@clerk/express'
 
 const app = express()
 
+// Connect services
 await connectDB()
 await connectCloudinary()
 
+// CORS
 const allowedOrigins = [
   "http://localhost:5173",
   "https://job-portal30.vercel.app",
