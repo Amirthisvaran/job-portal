@@ -50,4 +50,6 @@ app.use('/company', companyRouter)
 app.use('/jobs', jobRouter)
 app.use('/users', userRouter)
 
-export default app
+export default function handler(req, res) {
+  return app(req, res)
+}
