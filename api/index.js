@@ -37,10 +37,12 @@ app.use(
 app.use(express.json())
 app.use(clerkMiddleware())
 
+// Root test
 app.get('/', (req, res) => {
   res.send('API Working!')
 })
 
+// IMPORTANT: no /api prefix here
 app.post('/webhooks', clerkWebHooks)
 app.use('/company', companyRouter)
 app.use('/jobs', jobRouter)
