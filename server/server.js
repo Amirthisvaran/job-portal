@@ -29,10 +29,3 @@ app.post('/webhooks', clerkWebHooks)
 app.use('/api/company', companyRouter)
 app.use('/api/jobs', jobRouter)
 app.use('/api/users', userRouter)
-
-// Port
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT: ${PORT}`)
-})
